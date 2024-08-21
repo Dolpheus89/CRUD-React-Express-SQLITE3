@@ -32,22 +32,32 @@ Installe toutes les dépendances nécessaires pour le backend de ce projet :
     npm install -D nodemon
 ```
 
+Creer de suite un `.gitignore` pour les node_modules pour ne pas les envoyer sur Git Hub
+
 3. **Configurer le Mode Module** :
 
 Assurez-vous que le projet utilise le mode ECMAScript Modules (ESM). Pour cela, ajoutez `"type": "module"` dans le fichier `package.json` :
 
 ```json
 {
-  "name": "CRUD-REACT-EXPRESS-SQLITE3",
+  "name": "backend",
   "version": "1.0.0",
   "type": "module",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1",
-    "sqlite3": "^5.0.2"
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
   }
 }
 ```
@@ -65,14 +75,17 @@ Ton projet devrait ressembler a ceci pour le moment !
 
 ```bash
 └── backend/
+    ├── node_modules/
     ├── src/
     │   ├── controllers/ 
     │   ├── models/       
     │   ├── routes/   
     │   ├── utils/         
     │   ├── tests/        
-    │   └── app.js                   
-    └── package.json
+    │   └── app.js    
+    ├── .gitignore               
+    ├── package.json
+    └── package-lock.json
 ```
 
 
